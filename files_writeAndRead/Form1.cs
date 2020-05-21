@@ -20,10 +20,10 @@ namespace files_writeAndRead
         private void btnWriteData_Click(object sender, EventArgs e)
         {
             string textData = txtDataToAdd.Text;
-            //System.IO.File.WriteAllText(@"C:\13CSC\files_writeAndRead\textData.txt", textData);
-            
+            //System.IO.File.WriteAllText("../../../textData.txt", textData);
+
             using (System.IO.StreamWriter file =
-            new System.IO.StreamWriter(@"C:\13CSC\files_writeAndRead\textData.txt", true))
+            new System.IO.StreamWriter("../../../textData.txt", true))
             {
                 file.WriteLine(textData);
             }
@@ -32,10 +32,10 @@ namespace files_writeAndRead
 
         private void btnReadData_Click(object sender, EventArgs e)
         {
-            //string text = System.IO.File.ReadAllText(@"C:\13CSC\files_writeAndRead\textData.txt");
+            //string text = System.IO.File.ReadAllText("../../../textData.txt");
             //lblDisplayData.Text = text;
-            
-            string[] lines = System.IO.File.ReadAllLines("testDebugFolderText.txt");
+
+            string[] lines = System.IO.File.ReadAllLines("../../../textData.txt");
             for (int i = 0; i < lines.Length; i++)
             {
                 lblDisplayData.Text += "\n" + lines[i];
